@@ -1,0 +1,16 @@
+# --- Web framework ---
+fastapi>=0.110.0
+uvicorn[standard]>=0.29.0
+jinja2>=3.1.3
+python-dotenv>=1.0.1
+pydantic>=2.6.0
+
+# --- Google Gemini (cloud LLM) ---
+google-genai>=1.0.0
+
+# --- Local model for the Explanation module (LaMini-Flan-T5-783M) ---
+# If you only want Gemini (no ~3 GB model download), you can skip these three
+# and set EXPLAIN_BACKEND=gemini in your .env file.
+transformers>=4.40.0
+torch>=2.2.0
+sentencepiece>=0.2.0

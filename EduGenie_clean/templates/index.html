@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EduGenie - Your AI Learning Assistant</title>
+    <link rel="stylesheet" href="{{ url_for('static', path='style.css') }}">
+</head>
+<body>
+    <main class="container">
+        <header>
+            <h1>Welcome to EduGenie 🧠✨</h1>
+            <p class="subtitle">Your personal AI tutor for learning support!</p>
+        </header>
+
+        <form id="taskForm" class="card" autocomplete="off">
+            <label for="task"><strong>What would you like to do?</strong></label>
+            <select id="task" name="task">
+                <option value="qa">Ask a Question (Q&amp;A)</option>
+                <option value="explain">Explain a Concept</option>
+                <option value="quiz">Generate a Quiz</option>
+                <option value="summary">Summarize Text</option>
+                <option value="path">Recommend Learning Path</option>
+            </select>
+
+            <label for="userInput" id="inputLabel"><strong>Your question:</strong></label>
+            <textarea id="userInput" rows="6" placeholder="Which is the largest ocean?" required></textarea>
+
+            <button type="submit" id="submitBtn">Submit</button>
+        </form>
+
+        <section id="resultCard" class="card hidden" aria-live="polite">
+            <h2 id="resultTitle">Result</h2>
+            <div id="loader" class="loader hidden"><span class="spinner"></span> EduGenie is thinking…</div>
+            <div id="output" class="output"></div>
+        </section>
+
+        <footer>EduGenie · Powered by Google Gemini &amp; LaMini-Flan-T5</footer>
+    </main>
+
+    <script src="{{ url_for('static', path='app.js') }}"></script>
+</body>
+</html>
